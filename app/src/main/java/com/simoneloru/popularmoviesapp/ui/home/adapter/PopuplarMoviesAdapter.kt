@@ -4,24 +4,20 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.simoneloru.popularmoviesapp.data.model.Movie
-import com.simoneloru.popularmoviesapp.databinding.MovieDetailBinding
+import com.simoneloru.popularmoviesapp.databinding.MovieDetailCardBinding
 
 
 class PopuplarMoviesAdapter(val context: Context, val recyclerViewHome: RecyclerViewHomeClickListener) : RecyclerView.Adapter<ViewHolder>(){
     private lateinit var recyclerView: RecyclerView
-    lateinit var mActivity: AppCompatActivity
-
-    private val TAG: String = "AppDebug"
 
     var items: List<Movie> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            MovieDetailBinding.inflate(
+            MovieDetailCardBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false))
     }
 
@@ -63,7 +59,9 @@ class PopuplarMoviesAdapter(val context: Context, val recyclerViewHome: Recycler
     private fun isLinearLayoutManager() = recyclerView.layoutManager is LinearLayoutManager
 }
 
-class ViewHolder(private val binding: MovieDetailBinding) : RecyclerView.ViewHolder(binding.root) {
+class ViewHolder(private val binding: MovieDetailCardBinding) : RecyclerView.ViewHolder(binding.root) {
+
+
 
     fun bind(item: Movie, isLinearLayoutManager: Boolean) {
         binding.apply {
@@ -71,6 +69,8 @@ class ViewHolder(private val binding: MovieDetailBinding) : RecyclerView.ViewHol
             executePendingBindings()
         }
     }
+
+
 }
 interface RecyclerViewHomeClickListener {
     fun clickOnItem(data: Movie, card: View)

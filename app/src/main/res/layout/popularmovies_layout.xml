@@ -27,9 +27,9 @@
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:scrollbars="vertical"
-                app:spanCount="2"
+                app:spanCount="1"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                tools:listitem="@layout/movie_detail"/>
+                tools:listitem="@layout/movie_detail_card"/>
         </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
