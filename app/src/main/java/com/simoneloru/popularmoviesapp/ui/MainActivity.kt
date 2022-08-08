@@ -27,12 +27,6 @@ class MainActivity: AppCompatActivity(), NavController.OnDestinationChangedListe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val displayMetrics = DisplayMetrics()
-        windowManager.defaultDisplay.getMetrics(displayMetrics)
-
-        var width = displayMetrics.widthPixels
-        var height = displayMetrics.heightPixels
-
         binding.run {
             val navHostFragment = supportFragmentManager.findFragmentById(
                 R.id.nav_host_fragment_content_main

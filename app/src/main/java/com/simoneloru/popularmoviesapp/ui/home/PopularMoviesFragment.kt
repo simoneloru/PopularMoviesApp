@@ -111,8 +111,6 @@ class PopularMoviesFragment: Fragment(), RecyclerViewHomeClickListener {
         }
         dialog.setContentView(mdb.root)
         dialog.show();
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -122,6 +120,5 @@ class PopularMoviesFragment: Fragment(), RecyclerViewHomeClickListener {
 
     companion object {
         const val POPULAR = "popular"
-        const val TOP_RATED = "top_rated"
     }
 }
